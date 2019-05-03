@@ -1,20 +1,26 @@
 #include "../param.h"
-
 #include <stdio.h>
-#include <stdlib.h>
-#include <semaphore.h>
-#include <fcntl.h>
-#include <float.h>
-#include <sys/time.h>
 
-double time_diff(struct timeval x , struct timeval y)
-{
-    double x_ms , y_ms , diff;
-    x_ms = (double)x.tv_sec*1000000 + (double)x.tv_usec;
-    y_ms = (double)y.tv_sec*1000000 + (double)y.tv_usec;
-    diff = y_ms - x_ms;
-    return diff/1000;
-}
+#if defined(__linux__)
+    #include <stdlib.h>
+    #include <semaphore.h>
+    #include <fcntl.h>
+    #include <float.h>
+    #include <sys/time.h>
+
+    double time_diff(struct timeval x , struct timeval y)
+    {
+        double x_ms , y_ms , diff;
+        x_ms = (double)x.tv_sec*1000000 + (double)x.tv_usec;
+        y_ms = (double)y.tv_sec*1000000 + (double)y.tv_usec;
+        diff = y_ms - x_ms;
+        return diff/1000;
+    }
+#endif
+
+#if defined(_WIN32)
+    #include <windows.h>
+#endif
 
 // Отримання параметрів та виконання розрахунку
 void action(void)
@@ -44,7 +50,12 @@ int main(void)
 {
     double min_time = DBL_MAX;
 // Створення семафору
+#if defined(__linux__)
     sem_t *sem = sem_open(semaphore_name, O_CREAT);
+#endif
+#if defined(_WIN32)
+    HANDLE sem = OpenSemaphore(SEMAPHORE_ALL_ACCESS, TRUE, semaphore_name);
+#endif
     if (sem == NULL)
     {
         printf("Can not create semaphore.\n");

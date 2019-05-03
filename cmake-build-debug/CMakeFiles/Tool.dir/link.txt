@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -g   CMakeFiles/Tool.dir/tool/main.c.o  -o Tool 

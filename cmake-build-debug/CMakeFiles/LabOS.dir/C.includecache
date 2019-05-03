@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/azbest/CLionProjects/LabOS/main.c
+stdio.h
+-
+stdlib.h
+-
+semaphore.h
+-
+fcntl.h
+-
+sys/stat.h
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -g   CMakeFiles/LabOS.dir/main.c.o  -o LabOS 
