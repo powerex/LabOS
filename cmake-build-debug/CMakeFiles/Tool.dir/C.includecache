@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Work/Olimpiada/LabOS/LabOS/param.h
+sys/sysinfo.h
+-
+Windows.h
+-
+
+D:/Work/Olimpiada/LabOS/LabOS/tool/main.c
+../param.h
+D:/Work/Olimpiada/LabOS/LabOS/param.h
+stdio.h
+-
+stdlib.h
+-
+semaphore.h
+-
+fcntl.h
+-
+sys/stat.h
+-
+

@@ -22,11 +22,13 @@
     #include <windows.h>
     #include <afxres.h>
     #include<time.h>
+#include <math.h>
 #endif
 
 // Отримання параметрів та виконання розрахунку
-void action(void)
+double action(void)
 {
+    double res;
 // Відкриття файлу
     FILE *file = fopen(filename, "r");
     if (file != NULL)
@@ -40,12 +42,15 @@ void action(void)
         fclose(file);
         remove(filename);
 // Виконання розрахунку
-        if (success)
-            printf("(a+b)/(c+d)=(%f+%f)/(%f+%f)=%f\n", a, b, c, d, (a + b) / (c + d));
+        if (success) {
+            res = logf(sin(a-b+c*d));
+            printf("(a+b)/(c+d)=(%f+%f)/(%f+%f)=%f\n", a, b, c, d, res);
+        }
         else
             printf("Can not read a, b, c from file.\n");
         fflush(stdout);
     }
+    return res;
 }
 
 int main(void)
@@ -78,22 +83,7 @@ int main(void)
             break;
         }
 // Виконати дію над файлом
-        struct timeval before , after;
-#if defined(__linux__)
-        gettimeofday(&before , NULL);
-#endif
-#if defined(_WIN32)
-        clock_t begin = clock();
-#endif
-        action();
-
-#if defined(__linux__)
-        gettimeofday(&after , NULL);
-#endif
-#if defined(_WIN32)
-        clock_t end = clock();
-#endif
-
+        double x = action();
 // Дозволити іншим процесам працювати з файлом
 #if defined(__linux__)
         if (sem_post(sem) == -1)
@@ -105,15 +95,7 @@ int main(void)
             printf("Can not post semaphore.\n");
             break;
         }
-#if defined(__linux__)
-        double time_spent = time_diff(before, after);
-#endif
-#if defined(_WIN32)
-        double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-#endif
-        if (time_spent < min_time)
-            min_time = time_spent;
-        printf("Current time elpased is %f seconds\nMinimum time elapsed is %f seconds\n", time_spent, min_time);
+        printf("Reduced data = %f", x/2);
     }
 // Закриття семафору
 #if defined(__linux__)
