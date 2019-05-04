@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Tool.dir/tool/main.c.o"
+  "CMakeFiles/Tool.dir/tool/main.c.obj"
   "Tool.pdb"
-  "Tool"
+  "Tool.exe"
+  "Tool.exe.manifest"
+  "libTool.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

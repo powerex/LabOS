@@ -1,1 +1,3 @@
-/usr/bin/cc  -pthread -g   CMakeFiles/LabOS.dir/main.c.o  -o LabOS 
+"C:\Program Files\JetBrains\CLion 2017.2.3\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\LabOS.dir/objects.a
+D:\MinGW\bin\ar.exe cr CMakeFiles\LabOS.dir/objects.a @CMakeFiles\LabOS.dir\objects1.rsp
+D:\MinGW\bin\gcc.exe  -pthread -g   -Wl,--whole-archive CMakeFiles\LabOS.dir/objects.a -Wl,--no-whole-archive  -o LabOS.exe -Wl,--out-implib,libLabOS.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\LabOS.dir\linklibs.rsp

@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/LabOS.dir/main.c.o"
+  "CMakeFiles/LabOS.dir/main.c.obj"
   "LabOS.pdb"
-  "LabOS"
+  "LabOS.exe"
+  "LabOS.exe.manifest"
+  "libLabOS.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,5 +1,5 @@
-/home/azbest/CLionProjects/LabOS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/azbest/CLionProjects/LabOS/cmake-build-debug/CMakeFiles/Calc.dir
-/home/azbest/CLionProjects/LabOS/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/azbest/CLionProjects/LabOS/cmake-build-debug/CMakeFiles/Tool.dir
-/home/azbest/CLionProjects/LabOS/cmake-build-debug/CMakeFiles/LabOS.dir
+D:/Work/Olimpiada/LabOS/LabOS/cmake-build-debug/CMakeFiles/LabOS.dir
+D:/Work/Olimpiada/LabOS/LabOS/cmake-build-debug/CMakeFiles/Tool.dir
+D:/Work/Olimpiada/LabOS/LabOS/cmake-build-debug/CMakeFiles/Calc.dir
+D:/Work/Olimpiada/LabOS/LabOS/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Work/Olimpiada/LabOS/LabOS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
